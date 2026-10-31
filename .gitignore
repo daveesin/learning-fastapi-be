@@ -1,0 +1,24 @@
+# Python / FastAPI
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.venv/
+env/
+venv/
+ENV/
+env.bak
+venv.bak
+
+# Variáveis de ambiente e segredos
+.env
+
+# Banco de dados SQLite local (se aplicável aos seus testes)
+*.db
+*.sqlite
+*.sqlite3
+
+# Logs e arquivos do sistema operacional
+*.log
+.DS_Store
+Thumbs.db
