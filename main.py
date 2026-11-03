@@ -10,10 +10,26 @@
 
 # imports
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 
 
 # Inicia a variável que inicia o servidor
 app = FastAPI()
+
+
+#Define as origens permitidas para requisições CORS (Cross-Origin Resource Sharing)
+origins = [
+    "http://localhost:5173",
+    "http://127.0.0.1:5173",
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,          # Permite requisições destas origens
+    allow_credentials=True,
+    allow_methods=["*"],            # Permite todos os métodos (GET, POST, etc.)
+    allow_headers=["*"],            # Permite todos os headers (Content-Type, Authorization, etc.)
+)
 
 
 # Importa os routers dos arquivos de rota
