@@ -81,7 +81,7 @@ async def login(dados_formulario: OAuth2PasswordRequestForm = Depends(), session
 
 
 
-@auth_router.get("/verificar")
+@auth_router.get("/verificar_token")
 async def verificar(usuario: Usuario = Depends(verificar_token)):
     return {
         "mensagem": f"Olá {usuario.nome}, você está autenticado!",
